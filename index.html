@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Site</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <!--navigation-->
+   <header>
+        <nav>
+      <div class="layar-dalam">
+        <div class="logo">
+          <a href=""><img src="asset/logo.png" class="putih" /></a>
+        </div>
+        <div class="menu">
+    <a href="#" class="tombol-menu" onclick="toggleMenu(event)"></a>
+    <ul id="navMenu">
+        <li><a href="#hero" onclick="closeMenu()">Home</a></li>
+        <li><a href="#packages" onclick="closeMenu()">packages</a></li>
+        <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+        <li><a href="#direct-booking" onclick="closeMenu()">Direct Booking</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+</div>
+    </nav>
+    </header>
+    
+    <!--hero section-->
+   <section class="hero" id="hero">
+    <div class="hero-content">
+        <div class="text-wrapper">
+            <h2>Explore Lombok Island</h2>
+            <p>Discover the beauty of pristine beaches, waterfalls, and culture.</p>
+            <a href="#packages" class="btn">Get Started</a>
+        </div>
+        <img src="image/pantai_pink.jpg" alt="Lombok Island" class="hero-image">
+    </div>
+</section> 
+
+    <!--destinations-->
+    <section class="packages" id="packages">
+    <h2>Paket Wisata</h2>
+    <div class="package-scroll-wrapper">
+        <div class="package-cards">
+            <div class="package-card">
+                <img src="image/desasade.jpg" alt="Sasak Tour" onclick="openModal(this)">
+                <h3>Sasak Tour</h3>
+                <p>Explore the beautiful village of Sade.</p>
+                
+                <button class="detail-btn" onclick="openModal(this.parentElement)">Lihat Detail</button>
+            </div>
+            <div class="package-card">
+                <img src="image/selongbelanak.jpg" alt="surf lesson" onclick="openModal(this)">
+                <h3>surf lesson</h3>
+                <p>Learn to surf in the beautiful beaches of Lombok.</p>
+                <button class="detail-btn" onclick="openModal(this.parentElement)">Lihat Detail</button>
+            </div>
+            <div class="package-card">
+                <img src="asset/paket_3.jpeg" alt="Gili nangung & Snorkling" onclick="openModal(this)">
+                <h3>Gili nangung & Snorkling</h3>
+                <p>Experience the underwater world of Gili Islands.</p>
+                <button class="detail-btn" onclick="openModal(this.parentElement)">Lihat Detail</button>
+            </div>
+            <!-- Tambahkan lebih banyak card -->
+            <div class="package-card">
+                <img src="asset/paket_4.jpeg" alt="Bali" onclick="openModal(this)">
+                <h3>Bali</h3>
+                <p>Island of the gods.</p>
+                <button class="detail-btn" onclick="openModal(this.parentElement)">Lihat Detail</button>
+            </div>
+            <div class="package-card">
+                <img src="image/pantai_pink.jpg" alt="pantai pink" onclick="openModal(this)">
+                <h3>Pantai Pink</h3>
+                <p>Pantai dengan pasir berwarna pink.</p>
+                <button class="detail-btn" onclick="openModal(this.parentElement)">Lihat Detail</button>
+            </div>
+            <div class="package-card">
+                <img src="asset/paket_6.jpeg" alt="London" onclick="openModal(this)">
+                <h3>London</h3>
+                <p>Historic and modern blend.</p>
+                <button class="detail-btn" onclick="openModal(this.parentElement)">Lihat Detail</button>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<!-- Modal Popup -->
+<div id="packageModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Package Image">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDescription"></p>
+        <div class="modal-details">
+            <p><strong>Durasi:</strong> <span id="modalDuration"></span></p>
+            <p><strong>Harga:</strong> <span id="modalPrice"></span></p>
+            <p><strong>Fasilitas:</strong> <span id="modalFacilities"></span></p>
+        </div>
+        <button class="book-btn" onclick="pesanViaWA()" href="https://wa.me/6282326302787" target="_blank">Pesan Sekarang</button>
+    </div>
+</div>
+
+    <!--gallery-->
+    <!-- ===== GALLERY SECTION ===== -->
+    <section id="gallery">
+
+        <!-- section header -->
+        <div class="gallery-header">
+            <h2>Travel Gallery</h2>
+        </div>
+
+        <!-- gallery grid -->
+        <div class="gallery-grid">
+
+            <!-- card 1 -->
+            <div class="gallery-card">
+                <div class="card-image">
+                    <span>🏔️</span>
+                </div>
+                <div class="card-content">
+                    <h3>Alpine Escape</h3>
+                    <p>Swiss alps · crystal lakes · silent peaks</p>
+                    <span class="card-tag">Interlaken, Switzerland</span>
+                </div>
+            </div>
+
+            <!-- card 2 -->
+            <div class="gallery-card">
+                <div class="card-image">
+                    <span>🌊</span>
+                </div>
+                <div class="card-content">
+                    <h3>Coastal Dream</h3>
+                    <p>Sardinian shores · turquoise water · cliffs</p>
+                    <span class="card-tag">Cala Gonone, Italy</span>
+                </div>
+            </div>
+
+            <!-- card 3 -->
+            <div class="gallery-card">
+                <div class="card-image">
+                    <span>🏜️</span>
+                </div>
+                <div class="card-content">
+                    <h3>Desert Silence</h3>
+                    <p>Wadi Rum · red dunes · starry nights</p>
+                    <span class="card-tag">Wadi Rum, Jordan</span>
+                </div>
+            </div>
+
+            <!-- card 4 -->
+            <div class="gallery-card">
+                <div class="card-image">
+                    <span>🌿</span>
+                </div>
+                <div class="card-content">
+                    <h3>Jungle Whisper</h3>
+                    <p>Costa Rica · misty canopies · wildlife</p>
+                    <span class="card-tag">Monteverde, Costa Rica</span>
+                </div>
+            </div>
+
+            <!-- card 5 -->
+            <div class="gallery-card">
+                <div class="card-image">
+                    <span>🏙️</span>
+                </div>
+                <div class="card-content">
+                    <h3>Urban Rhythm</h3>
+                    <p>Lisbon · trams · fado &amp; hills</p>
+                    <span class="card-tag">Alfama, Portugal</span>
+                </div>
+            </div>
+
+            <!-- card 6 -->
+            <div class="gallery-card">
+                <div class="card-image">
+                    <span>❄️</span>
+                </div>
+                <div class="card-content">
+                    <h3>Arctic Light</h3>
+                    <p>Lofoten · northern lights · fjords</p>
+                    <span class="card-tag">Lofoten, Norway</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- footer note -->
+        <div class="gallery-footer">
+        </div>
+
+    </section>
+
+
+    <!--quote section-->
+    <section class="quote">
+          <div class="layar-dalam">
+            <p>Jelajahi pesona Lombok nikmati pantai yang memukau, budaya yang kaya, dan petualangan tak terlupakan.</p>
+          </div>
+    </section>
+
+     <!-- ===== DIRECT BOOKING SECTION ===== -->
+    <section class="direct-booking" id="direct-booking">
+        <div class="container">
+
+            <!-- Heading -->
+            <h2 class="direct-booking__title">Direct booking offers</h2>
+
+            <!-- Deskripsi -->
+            <p class="direct-booking__description">
+                Nikmati pengalaman liburan terbaik di Lombok dan Gili Islands 
+                dengan memesan perjalanan langsung bersama kami. Dapatkan 
+                pilihan paket wisata menarik, layanan yang lebih personal, 
+                serta kemudahan untuk menjelajahi pantai, budaya, dan keindahan alam Lombok.
+            </p>
+
+            <!-- Tombol CTA -->
+            <a href="https://wa.me/6282326302787" class="direct-booking__btn">BOOK NOW</a>
+
+        </div>
+    </section>
+
+  <!-- Footer -->
+
+ <!-- ========== FOOTER ========== -->
+    <footer class="footer-sederhana">
+        <div class="footer-container">
+
+            <!-- Kiri: copyright -->
+            <div class="footer-copy">
+                &copy; 2026 <span>Lombok Torok</span> — Hak cipta dilindungi.
+            </div>
+
+            <!-- Kanan: tautan sosial & navigasi -->
+            <div class="footer-links">
+
+                <!-- Sosial media -->
+                <a href="https://www.instagram.com/lombok_torok_tour_and_travel?igsi=YjU0ZDNmM3VpMGlz" aria-label="Instagram">
+                    <span class="social-icon" img="asset "><img src="asset/insta.png" alt="Instagram"></span> Instagram </a>
+                <a href="https://wa.me/6282326302787"aria-label="Whatsapp">
+                    <span class="social-icon" img="asset "><img src="asset/wa.png" alt="Whatsapp"></span> Whatsapp</a>
+                <a href="" aria-label="Location">
+                    <span class="social-icon" img="asset "><img src="asset/location.png" alt="Location"></span> Torok Beach, Lombok Island, Indonesia</a>    
+                    
+            </div>
+
+        </div>
+
+        <!-- Credit opsional -->
+        <div class="credit">
+            Lombok Torok &bull; Tour and Travel
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

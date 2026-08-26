@@ -1,0 +1,1476 @@
+/* Reset and Base Styles */
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 20px;
+    font-size: 15px;
+}
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', -apple-system, sans-serif;
+    background-color: #f0f5f0; /* Ganti: hijau soft alam */
+    color: #1e2b2b; /* Ganti: hijau kehitaman */
+}
+
+/* ========================================
+   HERO SECTION - Complete with Navigation
+   ======================================== */
+
+/* Header/Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px 20px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #b8d4c0; /* Ganti: hijau sage */
+}
+
+header .banner-image {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #b8d4c0; /* Ganti: hijau sage */
+    transition: background-color 0.3s ease;
+}
+
+nav.scrolled {
+    background-color: #1e3b3b; /* Ganti: hijau tropis gelap */
+    border-bottom-color: #2b5a4a;
+}
+
+nav.scrolled a {
+    color: #ffffff;
+}
+
+nav .logo {
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+}
+
+nav .logo img {
+    vertical-align: middle;
+    width: 120px;
+    height: auto;
+}
+
+nav .menu {
+    float: right;
+    height: 60px;
+    padding-right: 20px;
+}
+
+nav .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%;
+}
+
+nav .menu ul li {
+    list-style: none;
+    height: 60px;
+    line-height: 60px;
+}
+
+nav .menu ul li a {
+    display: inline-block;
+    padding: 0 16px;
+    color: #1e2b2b; /* Ganti: hijau gelap */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav .menu ul li a:hover {
+    color: #2b7a62; /* Ganti: hijau lumut */
+    text-decoration: underline;
+}
+
+nav::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media (max-width: 600px) {
+    nav .logo {
+        float: none;
+        display: block;
+        text-align: center;
+        padding-left: 0;
+    }
+    nav .menu {
+        float: none;
+        display: block;
+        text-align: center;
+        padding-right: 0;
+    }
+    nav .menu ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    nav .menu ul li {
+        height: 40px;
+        line-height: 40px;
+    }
+    nav .menu ul li a {
+        padding: 0 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   Hero SECTION
+   ======================================== */
+
+.hero {
+    padding: 40px 60px 60px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero .hero-content {
+    display: flex; /* Tambahkan ini */
+    align-items: center; /* Sejajarkan vertikal */
+    gap: 40px; /* Jarak antara teks dan gambar */
+    flex-wrap: wrap; /* Supaya responsif di layar kecil */
+}
+
+.hero .hero-content h2 {
+    font-size: 52px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #1e2b2b;
+    margin-bottom: 12px;
+    line-height: 1.1;
+}
+
+.hero .hero-content p {
+    font-size: 18px;
+    color: #3d5a5a;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 36px;
+}
+
+.hero .hero-content .btn {
+    display: inline-block;
+    background: #1e4d3a;
+    color: #fff;
+    padding: 12px 32px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: background 0.2s;
+}
+
+.hero .hero-content .btn:hover {
+    background: #2b6b52;
+}
+
+/* Bagian teks (h2, p, btn) */
+.hero .hero-content .text-wrapper {
+    flex: 1;
+}
+
+/* Gambar */
+.hero .hero-content .hero-image {
+   flex-shrink: 0;
+    width: 600px;
+    height: auto;
+    display: block; 
+    box-shadow: none;
+    border: none; 
+}
+/* ========================================
+   PACKAGES SECTION
+   ======================================== */
+.packages {
+    padding: 60px 60px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.packages h2 {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #1e2b2b; /* Ganti: hijau gelap */
+    margin-bottom: 32px;
+}
+
+.package-scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 10px 0 20px 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.package-scroll-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.package-scroll-wrapper::-webkit-scrollbar-track {
+    background: #dce8e0; /* Ganti: hijau sage muda */
+    border-radius: 10px;
+}
+
+.package-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #b8d4c0; /* Ganti: hijau sage */
+    border-radius: 10px;
+}
+
+.package-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #8cb89a; /* Ganti: hijau sedang */
+}
+
+.package-cards {
+    display: inline-flex;
+    gap: 30px;
+    white-space: normal;
+}
+
+.package-card {
+    flex: 0 0 280px;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s;
+    white-space: normal;
+}
+
+.package-card:hover {
+    transform: translateY(-4px);
+}
+
+.package-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+}
+
+.package-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 16px 20px 4px 20px;
+    color: #1e2b2b; /* Ganti: hijau gelap */
+    white-space: normal;
+}
+
+.package-card p {
+    font-size: 14px;
+    color: #3d5a5a; /* Ganti: hijau abu-abu */
+    padding: 0 20px 20px 20px;
+    line-height: 1.5;
+    white-space: normal;
+}
+
+/* quote section */
+.quote {
+    background: url("image/desasade.jpg") no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-style: italic;
+    padding: 100px;
+}
+.quote .layar-dalam p {
+    display: inline;
+    background: url("asset/quote-icon.png") no-repeat;
+    padding: 40px;
+}
+
+/* ========================================
+   Booking SECTION
+   ======================================== */
+
+.direct-booking {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #e8f0e8 0%, #d0e0d0 100%); /* Ganti: hijau soft */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.direct-booking::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(245, 166, 35, 0.08) 0%, transparent 70%); /* Ganti: orange keemasan */
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.direct-booking::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(245, 166, 35, 0.05) 0%, transparent 70%); /* Ganti: orange keemasan */
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.direct-booking__title {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #1e2b2b; /* Ganti: hijau gelap */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    position: relative;
+    display: inline-block;
+}
+
+.direct-booking__title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #f5a623, #d4891a); /* Ganti: orange keemasan */
+    margin: 18px auto 0;
+    border-radius: 2px;
+}
+
+.direct-booking__description {
+    font-family: 'Arial', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #3d5a5a; /* Ganti: hijau abu-abu */
+    max-width: 750px;
+    margin: 30px auto 40px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.direct-booking__btn {
+    display: inline-block;
+    padding: 18px 55px;
+    font-family: 'Arial', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #f5a623, #d4891a); /* Ganti: orange keemasan */
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-radius: 50px;
+    border: 2px solid #f5a623;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(245, 166, 35, 0.3);
+}
+
+.direct-booking__btn:hover {
+    background: transparent;
+    color: #f5a623;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px rgba(245, 166, 35, 0.4);
+}
+
+.direct-booking__btn:active {
+    transform: translateY(0px);
+    box-shadow: 0 4px 20px rgba(245, 166, 35, 0.3);
+}
+
+@media (max-width: 768px) {
+    .direct-booking {
+        padding: 60px 20px;
+    }
+    .direct-booking__title {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+    .direct-booking__title::after {
+        width: 60px;
+        height: 2px;
+    }
+    .direct-booking__description {
+        font-size: 16px;
+        line-height: 1.7;
+        margin: 25px auto 35px;
+        padding: 0 10px;
+    }
+    .direct-booking__btn {
+        padding: 16px 45px;
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+    .direct-booking::before {
+        width: 400px;
+        height: 400px;
+        top: -30%;
+        right: -30%;
+    }
+}
+
+@media (max-width: 480px) {
+    .direct-booking {
+        padding: 50px 15px;
+    }
+    .direct-booking__title {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+    .direct-booking__title::after {
+        width: 50px;
+        height: 2px;
+        margin-top: 14px;
+    }
+    .direct-booking__description {
+        font-size: 15px;
+        line-height: 1.6;
+        margin: 20px auto 30px;
+        padding: 0 5px;
+    }
+    .direct-booking__btn {
+        padding: 14px 35px;
+        font-size: 13px;
+        letter-spacing: 2px;
+        width: 100%;
+        max-width: 280px;
+        box-sizing: border-box;
+    }
+    .direct-booking::before,
+    .direct-booking::after {
+        display: none;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.direct-booking__title,
+.direct-booking__description,
+.direct-booking__btn {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.direct-booking__description {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.direct-booking__btn {
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+/* ========================================
+   MODAL DESIGN
+   ======================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 16px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideDown 0.3s;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #1e2b2b; /* Ganti: hijau gelap */
+}
+
+#modalImage {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+#modalTitle {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1e2b2b; /* Ganti: hijau gelap */
+    margin-bottom: 8px;
+}
+
+#modalDescription {
+    font-size: 16px;
+    color: #3d5a5a; /* Ganti: hijau abu-abu */
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.modal-details {
+    background: #eef5ee; /* Ganti: hijau soft */
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.modal-details p {
+    font-size: 15px;
+    color: #1e2b2b; /* Ganti: hijau gelap */
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.modal-details strong {
+    color: #1e4d3a; /* Ganti: hijau hutan */
+}
+
+.book-btn {
+    background: #1e4d3a; /* Ganti: hijau hutan */
+    color: #fff;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.book-btn:hover {
+    background: #2b6b52; /* Ganti: hijau lebih terang */
+}
+
+.detail-btn {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 0 20px 20px 20px;
+    padding: 10px;
+    background: #eef5ee; /* Ganti: hijau soft */
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e2b2b; /* Ganti: hijau gelap */
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.detail-btn:hover {
+    background: #dce8e0; /* Ganti: hijau sage muda */
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+    #modalImage {
+        height: 200px;
+    }
+    #modalTitle {
+        font-size: 22px;
+    }
+}
+
+/* ========================================
+   GALLERY SECTION
+   ======================================== */
+#gallery {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    background: #faf9f6;
+    font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ---- HEADER ---- */
+#gallery .gallery-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#gallery .gallery-header h2 {
+    font-size: 2.6rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #1e2b37;
+    margin: 0 0 0.5rem 0;
+}
+
+#gallery .gallery-header p {
+    font-size: 1.1rem;
+    color: #4a5c6b;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 0.8rem;
+    border-top: 1px solid #d8d0c4;
+}
+
+/* ---- GRID ---- */
+#gallery .gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* ---- CARD ---- */
+#gallery .gallery-card {
+    flex: 0 1 280px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #eeeae5;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#gallery .gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ---- CARD IMAGE ---- */
+#gallery .card-image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    background: #d9d0c4;
+    /* fallback color */
+}
+
+/* Individual card image backgrounds */
+#gallery .gallery-card:nth-child(1) .card-image {
+    background: linear-gradient(145deg, #c0d0dd, #a1b6c7);
+}
+
+#gallery .gallery-card:nth-child(2) .card-image {
+    background: linear-gradient(145deg, #e2d2be, #cbb8a2);
+}
+
+#gallery .gallery-card:nth-child(3) .card-image {
+    background: linear-gradient(145deg, #c9bb9f, #aa9b7e);
+}
+
+#gallery .gallery-card:nth-child(4) .card-image {
+    background: linear-gradient(145deg, #bccbbb, #99ab98);
+}
+
+#gallery .gallery-card:nth-child(5) .card-image {
+    background: linear-gradient(145deg, #d6c7be, #baa9a0);
+}
+
+#gallery .gallery-card:nth-child(6) .card-image {
+    background: linear-gradient(145deg, #c6d4d2, #a3b4b2);
+}
+
+/* ---- CARD CONTENT ---- */
+#gallery .card-content {
+    padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+}
+
+#gallery .card-content h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0 0 0.3rem 0;
+    color: #1e2b37;
+}
+
+#gallery .card-content p {
+    font-size: 0.95rem;
+    color: #4b5b68;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.5;
+}
+
+/* ---- TAG ---- */
+#gallery .card-tag {
+    display: inline-block;
+    background: #e7e1d9;
+    padding: 0.25rem 1rem;
+    border-radius: 40px;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    color: #2d3e4b;
+}
+
+#gallery .gallery-footer {
+    text-align: center;
+    margin-top: 3.5rem;
+    padding-top: 1.8rem;
+    border-top: 1px solid #ddd6cd;
+    color: #6a7b88;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+}
+
+/* ========================================
+   Footer Section
+   ======================================== */
+.footer-sederhana {
+    background: #1e4d3a;
+    border-top: 1px solid #e2e8f0;
+    padding: 1.8rem 1.5rem;
+    margin-top: auto;      /* dorong ke bawah */
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem 2rem;
+}
+
+
+.footer-copy {
+    font-size: 0.95rem;
+    color: #ffffff;
+    letter-spacing: 0.01em;
+}
+
+.footer-copy span {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Kanan: tautan sosial & navigasi */
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.footer-links img {
+    width: 35px;
+    height: auto;
+    object-fit: contain;
+    display: inline-block;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 450;
+    transition: color 0.2s ease, transform 0.1s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.footer-links a:hover {
+    color: #f5a623;
+    transform: translateY(-1px);
+}
+
+
+/* Untuk gambar logo di footer */
+.footer-links .social-icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover; /* Memotong gambar agar pas */
+    display: block;
+}
+
+/* Pemisah garis vertikal */
+.footer-divider {
+    width: 1px;
+    height: 24px;
+    background: #d1d9e6;
+    display: inline-block;
+}
+
+/* Credit tambahan */
+.footer-sederhana .credit {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 0.8rem;
+}
+
+/* ---------- RESPONSIF (mobile) ---------- */
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.8rem;
+    }
+
+    .footer-links {
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-divider {
+        display: none;   /* hilang di mobile agar rapi */
+    }
+
+    .footer-copy {
+        font-size: 0.9rem;
+    }
+
+    .footer-sederhana .credit {
+        font-size: 0.7rem;
+    }
+}
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+    header {
+        padding: 16px 30px;
+    }
+    .hero {
+        padding: 30px 30px 40px 30px;
+    }
+    .hero .hero-content h2 {
+        font-size: 40px;
+    }
+    .destinations {
+        padding: 40px 30px;
+    }
+    .destination-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery {
+        padding: 30px 30px 60px 30px;
+    }
+    .gallery-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 16px 20px;
+        gap: 12px;
+    }
+    header nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+    header .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+    .hero {
+        padding: 20px 20px 30px 20px;
+    }
+    .hero .hero-content h2 {
+        font-size: 32px;
+    }
+    .hero .hero-content p {
+        font-size: 16px;
+        max-width: 100%;
+    }
+    .destinations {
+        padding: 30px 20px;
+    }
+    .destinations h2 {
+        font-size: 28px;
+    }
+    .destination-cards {
+        grid-template-columns: 1fr;
+    }
+    .gallery {
+        padding: 20px 20px 40px 20px;
+    }
+    .gallery h2 {
+        font-size: 28px;
+    }
+    .gallery-images {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    .gallery-images img {
+        height: 150px;
+    }
+}
+
+/* ========================================
+   ADD THESE RESPONSIVE FIXES AT THE BOTTOM
+   OF YOUR CSS FILE
+   ======================================== */
+
+/* ====== MOBILE-FRIENDLY NAVIGATION ====== */
+@media (max-width: 768px) {
+    nav {
+        height: 70px;
+        line-height: 70px;
+        padding: 0 15px;
+        background-color: #ffffff;
+    }
+
+    nav .logo {
+        float: left;
+        height: 70px;
+        line-height: 70px;
+        padding-left: 0;
+    }
+
+    nav .logo img {
+        width: 100px;
+        height: auto;
+    }
+
+    /* Hamburger button */
+    nav .menu .tombol-menu {
+        display: block;
+        float: right;
+        font-size: 30px;
+        color: #1e2b2b;
+        cursor: pointer;
+        padding: 0 10px;
+        line-height: 70px;
+        text-decoration: none;
+        background: none;
+        border: none;
+    }
+
+    nav .menu .tombol-menu::before {
+        content: "☰";
+    }
+
+    nav .menu ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        border-top: 1px solid #b8d4c0;
+    }
+
+    nav .menu ul.open {
+        display: flex;
+    }
+
+    nav .menu ul li {
+        height: auto;
+        line-height: normal;
+        text-align: center;
+        border-bottom: 1px solid #f0f5f0;
+    }
+
+    nav .menu ul li a {
+        display: block;
+        padding: 14px 20px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #1e2b2b;
+        width: 100%;
+    }
+
+    nav .menu ul li a:hover {
+        background: #eef5ee;
+        text-decoration: none;
+    }
+
+    nav.scrolled .menu ul {
+        background: #1e3b3b;
+    }
+
+    nav.scrolled .menu ul li a {
+        color: #ffffff;
+    }
+
+    nav.scrolled .menu ul li a:hover {
+        background: #2b5a4a;
+    }
+
+    /* Close button when menu is open */
+    nav .menu .tombol-menu.open::before {
+        content: "✕";
+        font-size: 28px;
+    }
+}
+
+/* ====== HERO SECTION MOBILE ====== */
+@media (max-width: 768px) {
+    .hero {
+        padding: 30px 20px 40px 20px;
+        margin-top: 70px; /* Space for fixed nav */
+    }
+
+    .hero .hero-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero .hero-content .text-wrapper {
+        text-align: center;
+        order: 2; /* Text below image */
+    }
+
+    .hero .hero-content h2 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .hero .hero-content p {
+        font-size: 15px;
+        max-width: 100%;
+        margin-bottom: 24px;
+        padding: 0 10px;
+    }
+
+    .hero .hero-content .hero-image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        order: 1; /* Image on top */
+        border-radius: 16px;
+    }
+
+    .hero .hero-content .btn {
+        padding: 14px 40px;
+        font-size: 15px;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero .hero-content h2 {
+        font-size: 24px;
+    }
+
+    .hero .hero-content p {
+        font-size: 14px;
+    }
+
+    .hero .hero-content .hero-image {
+        max-width: 100%;
+    }
+}
+
+/* ====== PACKAGES SECTION MOBILE ====== */
+@media (max-width: 768px) {
+    .packages {
+        padding: 30px 15px 20px 15px;
+    }
+
+    .packages h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .package-scroll-wrapper {
+        padding: 5px 0 15px 0;
+    }
+
+    .package-cards {
+        gap: 16px;
+    }
+
+    .package-card {
+        flex: 0 0 240px;
+    }
+
+    .package-card img {
+        height: 170px;
+        object-fit: cover;
+    }
+
+    .package-card h3 {
+        font-size: 17px;
+        padding: 12px 14px 4px 14px;
+    }
+
+    .package-card p {
+        font-size: 13px;
+        padding: 0 14px 12px 14px;
+    }
+
+    .detail-btn {
+        width: calc(100% - 28px);
+        margin: 0 14px 14px 14px;
+        padding: 8px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .package-card {
+        flex: 0 0 200px;
+    }
+
+    .package-card img {
+        height: 140px;
+    }
+
+    .package-card h3 {
+        font-size: 15px;
+        padding: 10px 12px 2px 12px;
+    }
+
+    .package-card p {
+        font-size: 12px;
+        padding: 0 12px 10px 12px;
+    }
+}
+
+/* ====== GALLERY SECTION MOBILE ====== */
+@media (max-width: 768px) {
+    #gallery {
+        padding: 2rem 1rem;
+    }
+
+    #gallery .gallery-header h2 {
+        font-size: 2rem;
+    }
+
+    #gallery .gallery-header p {
+        font-size: 0.95rem;
+        padding-top: 0.5rem;
+    }
+
+    #gallery .gallery-grid {
+        gap: 1.2rem;
+    }
+
+    #gallery .gallery-card {
+        flex: 0 1 100%;
+        max-width: 360px;
+    }
+
+    #gallery .card-image {
+        height: 160px;
+        font-size: 2.8rem;
+    }
+
+    #gallery .card-content h3 {
+        font-size: 1.2rem;
+    }
+
+    #gallery .card-content p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #gallery .gallery-card {
+        flex: 0 1 100%;
+        max-width: 100%;
+    }
+
+    #gallery .card-image {
+        height: 140px;
+        font-size: 2.4rem;
+    }
+
+    #gallery .card-content {
+        padding: 1rem;
+    }
+
+    #gallery .card-content h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ====== QUOTE SECTION MOBILE ====== */
+@media (max-width: 768px) {
+    .quote {
+        padding: 50px 20px;
+        background-attachment: scroll; /* Fix background issue on mobile */
+        background-position: center;
+        background-size: cover;
+    }
+
+    .quote .layar-dalam p {
+        padding: 20px 10px;
+        font-size: 16px;
+        line-height: 1.6;
+        background-size: 30px;
+        background-position: left center;
+    }
+}
+
+@media (max-width: 480px) {
+    .quote {
+        padding: 40px 15px;
+    }
+
+    .quote .layar-dalam p {
+        font-size: 14px;
+        padding: 15px 10px;
+    }
+}
+
+/* ====== DIRECT BOOKING MOBILE (already has some, adding improvements) ====== */
+@media (max-width: 768px) {
+    .direct-booking {
+        padding: 50px 15px;
+    }
+
+    .direct-booking__title {
+        font-size: 30px;
+        letter-spacing: 3px;
+    }
+
+    .direct-booking__description {
+        font-size: 15px;
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .direct-booking__title {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .direct-booking__description {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .direct-booking__btn {
+        font-size: 13px;
+        padding: 14px 30px;
+        letter-spacing: 2px;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* ====== FOOTER MOBILE (already has some, adding improvements) ====== */
+@media (max-width: 768px) {
+    .footer-sederhana {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-container {
+        gap: 0.6rem;
+    }
+
+    .footer-links {
+        gap: 0.8rem;
+    }
+
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+
+    .footer-links img {
+        width: 28px;
+    }
+
+    .footer-copy {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer-links a {
+        font-size: 0.8rem;
+    }
+
+    .footer-copy {
+        font-size: 0.8rem;
+    }
+
+    .footer-sederhana .credit {
+        font-size: 0.65rem;
+    }
+}
+
+/* ====== MODAL MOBILE ====== */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10% auto;
+        padding: 20px 16px;
+        width: 92%;
+    }
+
+    #modalImage {
+        height: 160px;
+    }
+
+    #modalTitle {
+        font-size: 20px;
+    }
+
+    #modalDescription {
+        font-size: 14px;
+    }
+
+    .modal-details p {
+        font-size: 13px;
+    }
+
+    .book-btn {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    .close-btn {
+        font-size: 26px;
+        right: 16px;
+        top: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        margin: 15% auto;
+        padding: 16px 12px;
+        width: 95%;
+    }
+
+    #modalImage {
+        height: 130px;
+    }
+
+    #modalTitle {
+        font-size: 18px;
+    }
+
+    #modalDescription {
+        font-size: 13px;
+    }
+
+    .modal-details {
+        padding: 12px 14px;
+    }
+
+    .modal-details p {
+        font-size: 12px;
+    }
+}
+
+/* ====== GENERAL BODY IMPROVEMENTS ====== */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+
+    body {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    /* Prevent horizontal scroll */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
